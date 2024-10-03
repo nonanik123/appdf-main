@@ -10,8 +10,27 @@ import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import SearchOption from './SearchOption'
 import TopBar from './TopBar'
+import { useRouter } from 'next/navigation'
 
 const SecondaryNavbar = ({ hideTopBar = false }) => {
+  const router = useRouter()
+
+  const handleTurkishFlagClick = () => {
+    const currentPath = window.location.pathname
+
+    if (!currentPath.startsWith('/tr')) {
+      const newPath = `/tr${currentPath}`
+      router.push(newPath)
+    }
+  }
+  const handleEnglishFlagClick = () => {
+    const currentPath = window.location.pathname
+
+    if (currentPath.startsWith('/tr')) {
+      const newPath = currentPath.replace('/tr', '')
+      router.push(newPath)
+    }
+  }
   const pathname = usePathname()
   const [showSearch, setShowSearch] = useState(false)
   const [innerMobileMenu, setInnerMobileMenu] = useState(false)
@@ -91,6 +110,16 @@ const SecondaryNavbar = ({ hideTopBar = false }) => {
                 )}
               </li>
             ))}
+            <li>
+              <button onClick={handleTurkishFlagClick} className="ml-5 mr-3 w-9 ">
+                <img src="/images/turkey-flag.png" alt="Turkish Flag" />
+              </button>
+            </li>
+            <li>
+              <button onClick={handleEnglishFlagClick} className="mr-5 w-9">
+                <img src="/images/united-kingdom-flag.png" alt="English Flag" />
+              </button>{' '}
+            </li>
           </ul>
 
           <ul className="ml-auto flex items-center  [&>*:not(:last-child)]:me-2.5">

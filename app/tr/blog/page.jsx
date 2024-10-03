@@ -10,10 +10,11 @@ export default async function Blog() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/blogs/fetch`, {
     next: { revalidate: 0 },
   })
+
   const blogs = await res.json()
 
-  // Filter blogs for the 'en' language
-  const filteredBlogs = blogs.filter((blog) => blog.language === 'en')
+  // Filter blogs for the 'tr' language
+  const filteredBlogs = blogs.filter((blog) => blog.language === 'tr')
 
   // Get only the first 2 blogs for FeatureBlog
   const featureBlogs = filteredBlogs.slice(0, 2)
