@@ -1,4 +1,5 @@
 const { nextui } = require('@nextui-org/theme')
+const flowbite = require('flowbite-react/tailwind')
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
@@ -7,6 +8,7 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './node_modules/@nextui-org/theme/dist/components/[object Object].js',
+    flowbite.content(),
   ],
   darkMode: 'class',
 
@@ -102,5 +104,5 @@ module.exports = {
       pattern: /scale-/,
     },
   ],
-  plugins: [nextui()],
+  plugins: [nextui(), flowbite.plugin()],
 }

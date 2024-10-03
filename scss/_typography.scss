@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:wght@600&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:wght@600&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
 @layer base {
   body {
     @apply text-paragraph dark:text-white;
@@ -13,15 +13,15 @@
   }
 
   h1 {
-    @apply text-[36px] max-xl:leading-[1.33] xl:text-[64px] font-bold leading-[1.2];
+    @apply text-[36px] font-bold leading-[1.2] max-xl:leading-[1.33] xl:text-[64px];
   }
 
   h2 {
-    @apply text-[32px] xl:text-[36px] font-bold leading-[1.33];
+    @apply text-[32px] font-bold leading-[1.33] xl:text-[36px];
   }
 
   h3 {
-    @apply text-[22px] xl:text-[24px] font-semibold;
+    @apply text-[22px] font-semibold xl:text-[24px];
   }
 
   h4 {
