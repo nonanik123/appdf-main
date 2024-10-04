@@ -1,7 +1,7 @@
-import Footer from '@/components/footer/Footer'
-import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
-import NewsLetter from '@/components/shared/NewsLetter'
-import PageHero from '@/components/shared/PageHero'
+import Footer from '@/components/tr/footer/Footer'
+import SecondaryNavbar from '@/components/tr/navbar/SecondaryNavbar'
+import NewsLetter from '@/components/tr/shared/NewsLetter'
+import PageHero from '@/components/tr/shared/PageHero'
 import Image from 'next/image'
 import connectToDatabase from '@/utils/mongodb'
 import { ObjectId } from 'mongodb' // Ensure this is correct
@@ -49,7 +49,7 @@ const BlogDetails = async ({ params }) => {
               </div>
             </div>
             <div className="blog-details-body">
-              <div dangerouslySetInnerHTML={{ __html: blog.description }} />{' '}
+              <div style={{ whiteSpace: 'pre-wrap' }} dangerouslySetInnerHTML={{ __html: blog.description }} />{' '}
             </div>
           </div>
         </article>

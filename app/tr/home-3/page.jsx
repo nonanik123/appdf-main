@@ -1,16 +1,16 @@
-import Footer from '@/components/footer/Footer'
-import PrimaryNavbar from '@/components/navbar/PrimaryNavbar'
-import Clients from '@/components/shared/Clients'
+import Footer from '@/components/tr/footer/Footer'
+import PrimaryNavbar from '@/components/tr/navbar/PrimaryNavbar'
+import Clients from '@/components/tr/shared/Clients'
 
-import NewsLetter from '@/components/shared/NewsLetter'
-import PageHero from '@/components/home-4/Hero'
+import NewsLetter from '@/components/tr/shared/NewsLetter'
+import PageHero from '@/components/tr/home-4/Hero'
 
-import Rating from '@/components/home-2/Rating'
-import Pricing from '@/components/shared/Pricing'
-import PaymentFeatures from '@/components/shared/PaymentFeatures'
+import Rating from '@/components/tr/home-2/Rating'
+import Pricing from '@/components/tr/shared/Pricing'
+import PaymentFeatures from '@/components/tr/shared/PaymentFeatures'
 import { PaymentFeaturesData } from '@/data/data'
-import DataIntegration from '@/components/home-4/DataIntegration'
-import Blog from '@/components/home-2/Blog'
+import DataIntegration from '@/components/tr/home-4/DataIntegration'
+import Blog from '@/components/tr/home-2/Blog'
 export const metadata = {
   title: 'Banking',
 }

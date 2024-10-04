@@ -1,7 +1,7 @@
-import BlogSearch from '@/components/blogs/BlogSearch'
-import Footer from '@/components/footer/Footer'
-import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
-import PageHero from '@/components/shared/PageHero'
+import BlogSearch from '@/components/tr/blogs/BlogSearch'
+import Footer from '@/components/tr/footer/Footer'
+import SecondaryNavbar from '@/components/tr/navbar/SecondaryNavbar'
+import PageHero from '@/components/tr/shared/PageHero'
 import getMarkDownData from '@/utils/getMarkDownData'
 
 export const metadata = {

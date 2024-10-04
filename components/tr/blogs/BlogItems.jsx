@@ -13,10 +13,10 @@ const BlogItems = ({ blogData }) => {
       <div className="rounded border border-dashed border-gray-100 p-6 dark:border-borderColor-dark">
         <Image src={blogData.image} alt="Blog image" className="mb-6 w-full rounded-md" width={389} height={189} />
         {/* Use blogData._id for the link href */}
-        <Link href={`/blog/${blogData._id.toString()}`} className="block">
+        <Link href={`/tr/blog/${blogData._id.toString()}`} className="block">
           <h3 className="mb-3 font-semibold leading-[1.33]">{blogData.title}</h3>
         </Link>
-        <p>{blogData.description.slice(0, 70)}...</p>
+        <p style={{ whiteSpace: 'pre-wrap' }}> {blogData.description.slice(0, 70)}...</p>
       </div>
     </article>
   )

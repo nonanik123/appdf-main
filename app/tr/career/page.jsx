@@ -1,10 +1,10 @@
-import CareerDetails from '@/components/career/CareerDetails'
-import CareerList from '@/components/career/CareerList'
-import Footer from '@/components/footer/Footer'
-import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
-import NewsLetter from '@/components/shared/NewsLetter'
-import PageHero from '@/components/shared/PageHero'
-import PaymentFeatures from '@/components/shared/PaymentFeatures'
+import CareerDetails from '@/components/tr/career/CareerDetails'
+import CareerList from '@/components/tr/career/CareerList'
+import Footer from '@/components/tr/footer/Footer'
+import SecondaryNavbar from '@/components/tr/navbar/SecondaryNavbar'
+import NewsLetter from '@/components/tr/shared/NewsLetter'
+import PageHero from '@/components/tr/shared/PageHero'
+import PaymentFeatures from '@/components/tr/shared/PaymentFeatures'
 import { AboutFeaturesData } from '@/data/data'
 
 export const metadata = {

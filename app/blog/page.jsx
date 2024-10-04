@@ -6,8 +6,9 @@ import NewsLetter from '@/components/shared/NewsLetter'
 import PageHero from '@/components/shared/PageHero'
 
 export default async function Blog() {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
   // Fetch blogs from the API
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/blogs/fetch`, {
+  const res = await fetch(`${baseUrl}/api/blogs/fetch`, {
     next: { revalidate: 0 },
   })
   const blogs = await res.json()

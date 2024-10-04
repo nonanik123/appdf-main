@@ -49,7 +49,7 @@ const BlogDetails = async ({ params }) => {
               </div>
             </div>
             <div className="blog-details-body">
-              <div dangerouslySetInnerHTML={{ __html: blog.description }} />{' '}
+              <div style={{ whiteSpace: 'pre-wrap' }} dangerouslySetInnerHTML={{ __html: blog.description }} />{' '}
             </div>
           </div>
         </article>

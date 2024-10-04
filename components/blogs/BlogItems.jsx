@@ -16,7 +16,7 @@ const BlogItems = ({ blogData }) => {
         <Link href={`/blog/${blogData._id.toString()}`} className="block">
           <h3 className="mb-3 font-semibold leading-[1.33]">{blogData.title}</h3>
         </Link>
-        <p>{blogData.description.slice(0, 70)}...</p>
+        <p style={{ whiteSpace: 'pre-wrap' }}>{blogData.description.slice(0, 70)}...</p>
       </div>
     </article>
   )

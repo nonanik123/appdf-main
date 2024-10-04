@@ -1,9 +1,9 @@
-import FeatureBlog from '@/components/blogs/FeatureBlog'
-import RecentNews from '@/components/blogs/RecentNews'
-import Footer from '@/components/footer/Footer'
-import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
-import NewsLetter from '@/components/shared/NewsLetter'
-import PageHero from '@/components/shared/PageHero'
+import FeatureBlog from '@/components/tr/blogs/FeatureBlog'
+import RecentNews from '@/components/tr/blogs/RecentNews'
+import Footer from '@/components/tr/footer/Footer'
+import SecondaryNavbar from '@/components/tr/navbar/SecondaryNavbar'
+import NewsLetter from '@/components/tr/shared/NewsLetter'
+import PageHero from '@/components/tr/shared/PageHero'
 
 export default async function Blog() {
   // Fetch blogs from the API

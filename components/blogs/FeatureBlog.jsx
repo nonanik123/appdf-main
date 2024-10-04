@@ -49,7 +49,9 @@ const FeatureBlog = ({ featureBlog }) => {
                         <Link href={`/blog/${blog._id}`} className="block">
                           <h3 className="mb-3 font-semibold leading-[1.33]">{blog.title}</h3>
                         </Link>
-                        <p className="mb-4">{blog.description}</p>
+                        <p className="mb-4" style={{ whiteSpace: 'pre-wrap' }}>
+                          {blog.description}
+                        </p>
                       </div>
                     </div>
                   </div>

@@ -1,14 +1,21 @@
-import Footer from '@/components/footer/Footer'
-import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
-import NewsLetter from '@/components/shared/NewsLetter'
+import Footer from '@/components/tr/footer/Footer'
+import SecondaryNavbar from '@/components/tr/navbar/SecondaryNavbar'
+import NewsLetter from '@/components/tr/shared/NewsLetter'
 import getMarkDownContent from '@/utils/getMarkDownContent'
 import getMarkDownData from '@/utils/getMarkDownData'
 
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faTwitter, faWhatsapp, faFacebook, faTelegram, faRocketchat, faGoogle} from '@fortawesome/free-brands-svg-icons';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faInstagram,
+  faTwitter,
+  faWhatsapp,
+  faFacebook,
+  faTelegram,
+  faRocketchat,
+  faGoogle,
+} from '@fortawesome/free-brands-svg-icons'
 
 export async function generateMetadata({ params }) {
   const featuresData = getMarkDownData('data/features')
@@ -38,7 +45,6 @@ const Features = (props) => {
         <section className="hero  relative overflow-hidden pb-[60px] pt-[240px] max-lg:pt-150">
           <div className="container">
             <div className="mx-auto max-w-[948px] text-center">
-
               <h1 className="mb-10 max-lg:mb-10">{postParams.title}</h1>
             </div>
           </div>
@@ -60,38 +66,81 @@ const Features = (props) => {
                   <div className=" rounded border border-dashed border-gray-100 bg-white px-8 py-10 dark:border-borderColor-dark dark:bg-dark-200 max-md:p-5">
                     <h3 className="mb-1">Mesaj Entegrasyonları</h3>
                     <div className=" [&>*:not(:last-child)]:border-b [&>*:not(:last-child)]:border-dashed [&>*:not(:last-child)]:border-borderColor dark:[&>*:not(:last-child)]:border-borderColor-dark ">
-                      
-                    <div className="py-5">
-                          <h4 className="mb-2 text-lg font-medium"><FontAwesomeIcon icon={faRocketchat} style={{ color: '#0088cc', fontSize: '1.5em', marginRight: '4px' }} /> Site içi Chat
-      </h4>               <h4 className="mb-2 text-lg font-medium"><FontAwesomeIcon icon={faFacebook} style={{ color: '#4267B2', fontSize: '1.5em', marginRight: '10px' }} /> Facebook</h4>
-                          <h4 className="mb-2 text-lg font-medium"><FontAwesomeIcon icon={faInstagram} style={{ color: '#E1306C', fontSize: '1.5em', marginRight: '10px' }} /> İnstagram</h4>
-                          <h4 className="mb-2 text-lg font-medium"><FontAwesomeIcon icon={faWhatsapp} style={{ color: '#25D366', fontSize: '1.5em', marginRight: '10px' }} /> Whatsapp</h4>
-                          <h4 className="mb-2 text-lg font-medium"><FontAwesomeIcon icon={faRocketchat} style={{ color: '#0088cc', fontSize: '1.5em', marginRight: '4px' }} /> Site içi Chat
-      </h4>
-                          <h4 className="mb-2 text-lg font-medium"><FontAwesomeIcon icon={faTwitter} style={{ color: '#1DA1F2', fontSize: '1.5em', marginRight: '10px' }} /> Twitter</h4>
-                          <h4 className="mb-2 text-lg font-medium"><FontAwesomeIcon icon={faGoogle} style={{ color: '#DB4437', fontSize: '1.5em', marginRight: '10px' }} /> Google Business</h4>
-                          <h4 className="mb-2 text-lg font-medium"><FontAwesomeIcon icon={faTelegram} style={{ color: '#0088cc', fontSize: '1.5em', marginRight: '10px' }} /> Telegram</h4> 
-                        </div>
-                        <h3 className="mb-1">CRM / Mail Entegrasyonları</h3>
-                   
-                      
-                        <div className="py-5">
-                        <h4 className="mb-2 text-lg font-medium">Mailchimp</h4>
-<h4 className="mb-2 text-lg font-medium">Elastic Email</h4>
-<h4 className="mb-2 text-lg font-medium">Campaign Monitor</h4>
-<h4 className="mb-2 text-lg font-medium">Sendinblue</h4>
-<h4 className="mb-2 text-lg font-medium">SendGrid</h4>
-<h4 className="mb-2 text-lg font-medium">HubSpot</h4>
-<h4 className="mb-2 text-lg font-medium">Moosend</h4>
-<h4 className="mb-2 text-lg font-medium">GetResponse</h4>
-<h4 className="mb-2 text-lg font-medium">ConvertKit</h4>
-<h4 className="mb-2 text-lg font-medium">ActiveCampaign</h4>
-<h4 className="mb-2 text-lg font-medium">MailerLite</h4>
-<h4 className="mb-2 text-lg font-medium">Mailjet</h4>
-<h4 className="mb-2 text-lg font-medium">Calendly</h4>
-                        </div>
+                      <div className="py-5">
+                        <h4 className="mb-2 text-lg font-medium">
+                          <FontAwesomeIcon
+                            icon={faRocketchat}
+                            style={{ color: '#0088cc', fontSize: '1.5em', marginRight: '4px' }}
+                          />{' '}
+                          Site içi Chat
+                        </h4>{' '}
+                        <h4 className="mb-2 text-lg font-medium">
+                          <FontAwesomeIcon
+                            icon={faFacebook}
+                            style={{ color: '#4267B2', fontSize: '1.5em', marginRight: '10px' }}
+                          />{' '}
+                          Facebook
+                        </h4>
+                        <h4 className="mb-2 text-lg font-medium">
+                          <FontAwesomeIcon
+                            icon={faInstagram}
+                            style={{ color: '#E1306C', fontSize: '1.5em', marginRight: '10px' }}
+                          />{' '}
+                          İnstagram
+                        </h4>
+                        <h4 className="mb-2 text-lg font-medium">
+                          <FontAwesomeIcon
+                            icon={faWhatsapp}
+                            style={{ color: '#25D366', fontSize: '1.5em', marginRight: '10px' }}
+                          />{' '}
+                          Whatsapp
+                        </h4>
+                        <h4 className="mb-2 text-lg font-medium">
+                          <FontAwesomeIcon
+                            icon={faRocketchat}
+                            style={{ color: '#0088cc', fontSize: '1.5em', marginRight: '4px' }}
+                          />{' '}
+                          Site içi Chat
+                        </h4>
+                        <h4 className="mb-2 text-lg font-medium">
+                          <FontAwesomeIcon
+                            icon={faTwitter}
+                            style={{ color: '#1DA1F2', fontSize: '1.5em', marginRight: '10px' }}
+                          />{' '}
+                          Twitter
+                        </h4>
+                        <h4 className="mb-2 text-lg font-medium">
+                          <FontAwesomeIcon
+                            icon={faGoogle}
+                            style={{ color: '#DB4437', fontSize: '1.5em', marginRight: '10px' }}
+                          />{' '}
+                          Google Business
+                        </h4>
+                        <h4 className="mb-2 text-lg font-medium">
+                          <FontAwesomeIcon
+                            icon={faTelegram}
+                            style={{ color: '#0088cc', fontSize: '1.5em', marginRight: '10px' }}
+                          />{' '}
+                          Telegram
+                        </h4>
+                      </div>
+                      <h3 className="mb-1">CRM / Mail Entegrasyonları</h3>
 
-                     
+                      <div className="py-5">
+                        <h4 className="mb-2 text-lg font-medium">Mailchimp</h4>
+                        <h4 className="mb-2 text-lg font-medium">Elastic Email</h4>
+                        <h4 className="mb-2 text-lg font-medium">Campaign Monitor</h4>
+                        <h4 className="mb-2 text-lg font-medium">Sendinblue</h4>
+                        <h4 className="mb-2 text-lg font-medium">SendGrid</h4>
+                        <h4 className="mb-2 text-lg font-medium">HubSpot</h4>
+                        <h4 className="mb-2 text-lg font-medium">Moosend</h4>
+                        <h4 className="mb-2 text-lg font-medium">GetResponse</h4>
+                        <h4 className="mb-2 text-lg font-medium">ConvertKit</h4>
+                        <h4 className="mb-2 text-lg font-medium">ActiveCampaign</h4>
+                        <h4 className="mb-2 text-lg font-medium">MailerLite</h4>
+                        <h4 className="mb-2 text-lg font-medium">Mailjet</h4>
+                        <h4 className="mb-2 text-lg font-medium">Calendly</h4>
+                      </div>
                     </div>
 
                     <div>
