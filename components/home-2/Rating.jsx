@@ -1,18 +1,21 @@
 import { PaymentRatingData } from '@/data/data'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useTranslations } from 'next-intl'
 
 const Rating = () => {
+  const t = useTranslations('Rating')
   return (
     <section>
       <div className="container">
         <div className="grid grid-cols-12 items-center gap-5 rounded-medium bg-white p-2.5 shadow-nav dark:bg-dark-200">
           <div className="pl-12 max-lg:col-span-full max-lg:py-12 max-lg:pl-0 max-lg:text-center lg:col-span-5 lg:max-w-[425px]">
             <h2 className=" mb-8">
-              Binlerce firmanın <br />
-              ortak düşüncesi
+              {t('headline')}
+              <br />
+              {t('subheadline')}
             </h2>
-            <p>İşletmenizi bir adım ileriye taşıyın</p>
+            <p>{t('description')}</p>
           </div>
           <div className="max-lg:col-span-full lg:col-span-7">
             <div className=" grid grid-cols-3 gap-3 max-lg:grid-cols-1">
@@ -31,7 +34,7 @@ const Rating = () => {
                         </span>
                       ))}
                   </div>
-                  <h4 className="mb-3.5 text-xl font-semibold">{item.name}</h4>
+                  <h4 className="mb-3.5 text-xl font-semibold">{t(item.name)}</h4>
                   <p>{item.desc}</p>
                 </div>
               ))}

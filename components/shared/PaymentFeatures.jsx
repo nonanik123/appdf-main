@@ -1,5 +1,6 @@
 import { cn } from '@/utils/cn'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 
 const PaymentFeatures = ({
   sectionTag,
@@ -7,6 +8,8 @@ const PaymentFeatures = ({
   features,
   className = 'bg-white dark:bg-dark-300 pb-150 pt-150',
 }) => {
+  const t = useTranslations('PaymentFeatures')
+
   return (
     <section className={cn(className)}>
       <div className="absolute left-0 right-0 top-25 h-full w-full bg-[url('/images/core-gradient.png')] bg-[length:600px_1000px] bg-center bg-no-repeat opacity-70 md:hidden"></div>
@@ -40,8 +43,8 @@ const PaymentFeatures = ({
                     width={40}
                     height={40}
                   />
-                  <h3 className="mb-2.5">{items.title}</h3>
-                  <p>{items.desc}</p>
+                  <h3 className="mb-2.5">{t(items.title)}</h3>
+                  <p>{t(items.desc)}</p>
                 </div>
               </div>
             ))}

@@ -1,0 +1,86 @@
+{
+  "Hero": {
+    "title": "Yapay Zeka Destekli 🤖",
+    "subtitle": "Tüm kanallar",
+    "tagline": "Tek Ekranda!",
+    "description": "Tüm iletişim kanallarını tek bir panelde birleştirerek süreçlerinizi optimize eder. Harika bir müşteri deneyimi sunun ve görüşmeleri satışa dönüştürün.",
+    "ctaButtons": {
+      "getStarted": "Başlayın",
+      "getDemo": "Demo Alın"
+    }
+  },
+  "Rating": {
+    "headline": "Binlerce firmanın",
+    "subheadline": "ortak düşüncesi",
+    "description": "İşletmenizi bir adım ileriye taşıyın",
+    "categories": {
+      "easeOfUse": "Kullanım Kolaylığı",
+      "satisfaction": "Memnuniyet",
+      "customerTrust": "Müşteri Güveni"
+    }
+  },
+  "Menu": {
+    "home": "Anasayfa",
+    "features": "Özellikler",
+    "blog": "Blog",
+    "documents": "Dökümanlar",
+    "aboutUs": "Hakkımızda",
+    "contact": "İletişim",
+    "pricing": "Fiyatlandırma",
+    "resources": "Kaynaklar",
+    "requestDemo": "Demo Talep Et"
+  },
+  "PaymentFeatures": {
+    "whyDialogFusion": "Neden Dialog Fusion",
+    "time": "Zaman",
+    "timeDescription": "Tüm mesaj ekranlarınızı tek ekranda toplayarak temsilcilerinizin daha fazla mesaj cevaplamasını sağlar.",
+    "artificialIntelligence": "Yapay Zeka",
+    "aiDescription": "İnsansı yapay zeka neredeyse her soruyu cevaplar bu sayede insan gücüne eskisi kadar gerek duymazsınız.",
+    "marketing": "Pazarlama",
+    "marketingDescription": "Otomasyonlar sayesinde sizin için potansiyel müşteriler oluşturur ve satış hacminizi arttırmanızı sağlar."
+  },
+  "Pricing": {
+    "title": "Fiyatlandırma",
+    "subtitle": "İşletmeniz için en doğrusu",
+    "billingCycle": {
+      "monthly": "Aylık",
+      "yearly": "Yıllık"
+    }
+  },
+  "Blog": {
+    "headline": "Bizden Yenilikler",
+    "subheadline": "Yeni Bilgilendirici Yazılarımız",
+    "description": "Daha efektif kullanmak ve yeniliklerden haberdar olabilmek için blog yazılarımızı inceleyin.",
+    "ctaButton": "Daha Fazla Öğren"
+  },
+  "NewsLetter": {
+    "startToday": "Bugün Başla",
+    "freeTrial": "Hemen ücretsiz Deneyin!",
+    "description": "Çok kanallı chat deneyimini yapay zeka desteği ile tek ekranda topla.",
+    "phoneNumber": "Telefon Numaranız",
+    "callUs": "Sizi arayalım",
+    "noCreditCard": "Kredi Kartı Gerektirmez",
+    "immediateCall": "Hemen Sizi Arayalım"
+  },
+  "Footer": {
+    "description": "Dialog Fusion Tüm iletişim kanallarını tek bir panelde birleştirerek süreçlerinizi optimize eder. Harika bir müşteri deneyimi sunun ve görüşmeleri satışa dönüştürün.",
+    "rights": "2024 Dialog Fusion. Tüm Hakları Saklıdır.",
+    "links": {
+      "explore": "Keşfet",
+      "about": "Hakkımızda",
+      "pricing": "Fiyatlandırma",
+      "career": "Kariyer",
+      "partnership": "Satış Ortaklığı",
+      "contact": "İletişim",
+      "resources": "Kaynaklar",
+      "blog": "Blog",
+      "documents": "Dökümanlar",
+      "privacyPolicy": "Gizlilik Politikası",
+      "termsConditions": "Şartlar ve Koşullar"
+    },
+    "contactUs": {
+      "title": "İletişime Geçin",
+      "support": "Destek mi İhtiyacınız Var?"
+    }
+  }
+}

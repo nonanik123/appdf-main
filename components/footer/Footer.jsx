@@ -1,7 +1,11 @@
 import { FooterData } from '@/data/data.js'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
+
 const Footer = () => {
+  const t = useTranslations('Footer')
+
   return (
     <footer className="relative overflow-hidden bg-white pt-20 dark:bg-dark-300">
       <div className="container">
@@ -15,39 +19,39 @@ const Footer = () => {
               width={70}
               height={29}
             />
-            <p className="max-w-[350px] max-lg:mx-auto">{FooterData.footerText}</p>
+            <p className="max-w-[350px] max-lg:mx-auto">{t(FooterData.footerText)}</p>
           </div>
           <div className="col-span-12 max-lg:text-center lg:col-span-2">
-            <h3 className="mb-8 text-lg font-medium">Explore</h3>
+            <h3 className="mb-8 text-lg font-medium">{t('links.explore')}</h3>
             <ul className="[&>*:not(:last-child)]:mb-3">
               {FooterData.expolre.map((items) => (
                 <li key={items.id}>
                   <Link
                     href={items.link}
                     className="relative inline-block overflow-hidden text-base capitalize text-paragraph before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-full before:origin-right before:scale-x-0 before:bg-paragraph before:transition-transform before:duration-500  before:content-[''] before:hover:origin-left before:hover:scale-x-100 dark:text-white dark:before:bg-white">
-                    {items.name}
+                    {t(items.name)}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
           <div className="col-span-12 max-lg:text-center lg:col-span-2">
-            <h3 className="mb-8 text-lg font-medium">Resources</h3>
+            <h3 className="mb-8 text-lg font-medium">{t('links.resources')}</h3>
             <ul className="[&>*:not(:last-child)]:mb-3">
               {FooterData.resources.map((items) => (
                 <li key={items.id}>
                   <Link
                     href={items.link}
                     className="relative inline-block overflow-hidden text-base capitalize text-paragraph before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-full before:origin-right before:scale-x-0 before:bg-paragraph before:transition-transform before:duration-500  before:content-[''] before:hover:origin-left before:hover:scale-x-100 dark:text-white dark:before:bg-white">
-                    {items.name}
+                    {t(items.name)}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
           <div className="col-span-12 max-lg:text-center lg:col-span-2">
-            <h3 className="mb-8 text-lg font-medium">Get In touch</h3>
-            <p className="mb-3">Need Support?</p>
+            <h3 className="mb-8 text-lg font-medium">{t('contactUs.title')}</h3>
+            <p className="mb-3">{t('contactUs.support')}</p>
             <p className="mb-3">
               <Link
                 href={`mailto:${FooterData.email}`}
@@ -96,20 +100,20 @@ const Footer = () => {
 
         <div className="py-10 max-lg:text-center">
           <div className="flex max-lg:flex-col lg:items-center">
-            <p className="max-lg:mb-10">{FooterData.copyright}</p>
+            <p className="max-lg:mb-10">{t(FooterData.copyright)}</p>
             <ul className="flex items-center gap-15 max-lg:justify-center  lg:ml-auto">
               <li>
                 <Link
                   href="/privacy"
                   className="relative inline-block overflow-hidden text-base capitalize text-paragraph before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-full before:origin-right before:scale-x-0 before:bg-paragraph before:transition-transform before:duration-500  before:content-[''] before:hover:origin-left before:hover:scale-x-100 dark:text-white dark:before:bg-white">
-                  Privacy Policy
+                  {t('links.privacyPolicy')}
                 </Link>
               </li>
               <li>
                 <Link
                   href="/terms"
                   className="relative inline-block overflow-hidden text-base capitalize text-paragraph before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-full before:origin-right before:scale-x-0 before:bg-paragraph before:transition-transform before:duration-500  before:content-[''] before:hover:origin-left before:hover:scale-x-100 dark:text-white dark:before:bg-white">
-                  Terms & Conditions
+                  {t('links.termsConditions')}
                 </Link>
               </li>
             </ul>

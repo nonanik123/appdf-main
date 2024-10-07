@@ -1,22 +1,22 @@
 import getMarkDownData from '@/utils/getMarkDownData'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
+import { useTranslations } from 'next-intl'
 
 const Blog = () => {
   const blogs = getMarkDownData('data/blogs')
   const FinancialBlogItems = blogs.filter((blog) => blog.data.tags === 'Finance')
+  const t = useTranslations('Blog')
 
   return (
     <section className="relative bg-white pt-150 dark:bg-dark-300 max-md:pb-0 max-md:pt-25 lg:pb-[140px]">
       <div className="absolute left-0 right-0 top-25 h-full w-full bg-[url('/images/core-gradient.png')] bg-[length:600px_1000px] bg-center bg-no-repeat opacity-70 md:hidden"></div>
       <div className="container ">
         <div className="mb-12">
-          <p className="section-tagline">Bizden Yenilikler</p>
+          <p className="section-tagline">{t('headline')}</p>
           <div className="md:flex md:gap-10 ">
-            <h2 className="md:shrink-0">Yeni Bilgilendirici Yazılarımız</h2>
-            <p className="ml-auto  max-w-[600px]">
-              Daha efektif kullanmak ve yeniliklerden haberdar olabilmek için blog yazılarımızı inceleyin.
-            </p>
+            <h2 className="md:shrink-0">{t('subheadline')}</h2>
+            <p className="ml-auto  max-w-[600px]">{t('description')}</p>
           </div>
         </div>
 
@@ -49,7 +49,7 @@ const Blog = () => {
                   <ReactMarkdown className="mb-6">{blogItems.content.slice(0, 40)}</ReactMarkdown>
 
                   <Link href={`/blog/${blogItems.slug}`} className="btn-outline  btn-sm">
-                    Learn More
+                    {t('ctaButton')}
                   </Link>
                 </div>
               </article>

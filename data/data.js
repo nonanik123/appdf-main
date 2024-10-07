@@ -11,35 +11,35 @@ export const menuData = {
   menuContent: [
     {
       id: 1,
-      title: 'Anasayfa',
-      path: '/home-3',
+      title: 'home',
+      path: '/',
       newTab: false,
     },
     {
       id: 2,
-      title: 'Özellikler',
+      title: 'features',
       submenu: [
         {
           id: 2.1,
-          title: 'Blog',
+          title: 'blog',
           path: '/blog',
           newTab: false,
         },
         {
           id: 2.2,
-          title: 'Dökümanlar',
+          title: 'documents',
           path: '/blog-list',
           newTab: false,
         },
         {
           id: 2.3,
-          title: 'Hakkımızda',
+          title: 'aboutUs',
           path: '/about',
           newTab: false,
         },
         {
           id: 2.4,
-          title: 'İletişim',
+          title: 'contact',
           path: '/contact',
           newTab: false,
         },
@@ -48,36 +48,36 @@ export const menuData = {
 
     {
       id: 6,
-      title: 'Fiyatlandırma',
+      title: 'pricing',
       path: '/#fiyatlandirma',
       newTab: false,
     },
 
     {
       id: 8,
-      title: 'Kaynaklar',
+      title: 'resources',
       submenu: [
         {
           id: 8.1,
-          title: 'Blog',
+          title: 'blog',
           path: '/blog',
           newTab: false,
         },
         {
           id: 8.2,
-          title: 'Dökümanlar',
+          title: 'documents',
           path: '/blog-list',
           newTab: false,
         },
         {
           id: 8.3,
-          title: 'Hakkımızda',
+          title: 'aboutUs',
           path: '/about',
           newTab: false,
         },
         {
           id: 8.4,
-          title: 'İletişim',
+          title: 'contact',
           path: '/contact',
           newTab: false,
         },
@@ -495,20 +495,17 @@ export const PaymentRatingData = [
   {
     id: 1,
     rating: 4.7,
-    name: 'Kullanım Kolaylığı',
-    
+    name: 'categories.easeOfUse',
   },
   {
     id: 2,
     rating: 4.7,
-    name: 'Memnuniyet',
-   
+    name: 'categories.satisfaction',
   },
   {
     id: 3,
     rating: 4.9,
-    name: 'Müşteri Güveni',
-  
+    name: 'categories.customerTrust',
   },
 ]
 
@@ -562,22 +559,22 @@ export const PaymentFeaturesData = [
     id: 1,
     iconLight: '/images/payment/paymentFeature.svg',
     iconDark: '/images/payment/paymentFeature-dark.svg',
-    title: 'Zaman',
-    desc: 'Tüm mesaj ekranlarınızı tek ekranda toplayarak temsilcilerinizin daha fazla mesaj cevaplamasını sağlar. ',
+    title: 'time',
+    desc: 'timeDescription',
   },
   {
     id: 2,
     iconLight: '/images/payment/payementSecure.svg',
     iconDark: '/images/payment/payementSecure-dark.svg',
-    title: 'Yapay Zeka',
-    desc: 'İnsansı yapay zeka neredeyse her soruyu cevaplar bu sayede insan gücüne eskisi kadar gerek duymazsınız',
+    title: 'artificialIntelligence',
+    desc: 'aiDescription',
   },
   {
     id: 3,
     iconLight: '/images/payment/paymentCashback.svg',
     iconDark: '/images/payment/paymentCashback-dark.svg',
-    title: 'Pazarlama',
-    desc: 'Otomasyonlar sayesinde sizin için potansiyel müşteriler oluşturur ve satış hacminizi arttırmanızı sağlar.',
+    title: 'marketing',
+    desc: 'marketingDescription',
   },
 ]
 
@@ -845,60 +842,58 @@ export const IntegrationData = [
 export const FooterData = {
   logo: '/images/logo.svg',
   logoDark: '/images/logo-light.svg',
-  footerText: 'Dialog Fusion Tüm iletişim kanallarını tek bir panelde birleştirerek süreçlerinizi optimize eder. Harika bir müşteri deneyimi sunun ve görüşmeleri satışa dönüştürün. ',
-  copyright: `${new Date().getFullYear()} Dialog Fusion. Tüm Hakları Saklıdır.`,
+  footerText: 'description',
+  copyright: `rights`,
   email: 'support@dialogfusion.com',
   phone: '+3 230 705 5448',
   expolre: [
     {
       id: 1,
-      name: 'Hakkımızda',
+      name: 'links.about',
       link: '/about',
     },
     {
       id: 2,
-      name: 'Fiyatlandırma',
+      name: 'links.pricing',
       link: '/services',
     },
     {
       id: 3,
-      name: 'Kariyer',
+      name: 'links.career',
       link: '/career',
     },
     {
       id: 4,
-      name: 'Satış Ortaklığı',
+      name: 'links.partnership',
       link: '/home-2',
     },
     {
       id: 5,
-      name: 'İletişim',
+      name: 'links.contact',
       link: '/contact',
     },
-
   ],
   resources: [
     {
       id: 1,
-      name: 'Blog',
+      name: 'links.blog',
       link: '/blog',
     },
     {
       id: 2,
-      name: 'Dökümanlar',
+      name: 'links.documents',
       link: '/teams',
     },
     {
       id: 3,
-      name: 'Privacy',
+      name: 'links.privacyPolicy',
       link: '/privacy',
     },
     {
       id: 4,
-      name: 'Şartlar ve Koşullar',
+      name: 'links.termsConditions',
       link: '/terms',
     },
- 
   ],
 
   socialLinks: [
@@ -913,6 +908,5 @@ export const FooterData = {
       name: <LinkedIn />,
       link: '#',
     },
-
   ],
 }

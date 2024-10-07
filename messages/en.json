@@ -1,0 +1,86 @@
+{
+  "Hero": {
+    "title": "AI Powered 🤖",
+    "subtitle": "All Channels",
+    "tagline": "On One Screen!",
+    "description": "Optimize your processes by merging all communication channels into a single panel. Deliver a great customer experience and turn conversations into sales.",
+    "ctaButtons": {
+      "getStarted": "Get Started",
+      "getDemo": "Get a Demo"
+    }
+  },
+  "Rating": {
+    "headline": "The choice of thousands of companies",
+    "subheadline": "shared opinion",
+    "description": "Take your business one step further",
+    "categories": {
+      "easeOfUse": "Ease of Use",
+      "satisfaction": "Satisfaction",
+      "customerTrust": "Customer Trust"
+    }
+  },
+  "Menu": {
+    "home": "Home",
+    "features": "Features",
+    "blog": "Blog",
+    "documents": "Documents",
+    "aboutUs": "About Us",
+    "contact": "Contact",
+    "pricing": "Pricing",
+    "resources": "Resources",
+    "requestDemo": "Request Demo"
+  },
+  "PaymentFeatures": {
+    "whyDialogFusion": "Why Dialog Fusion",
+    "time": "Time",
+    "timeDescription": "Consolidates all your message screens into one screen, allowing your representatives to respond to more messages.",
+    "artificialIntelligence": "Artificial Intelligence",
+    "aiDescription": "Humanoid AI answers almost every question, reducing the need for human labor.",
+    "marketing": "Marketing",
+    "marketingDescription": "Generates potential customers for you through automation, increasing your sales volume."
+  },
+  "Pricing": {
+    "title": "Pricing",
+    "subtitle": "The best for your business",
+    "billingCycle": {
+      "monthly": "Monthly",
+      "yearly": "Yearly"
+    }
+  },
+  "Blog": {
+    "headline": "Updates from Us",
+    "subheadline": "Our New Informative Articles",
+    "description": "Explore our blog posts to use more effectively and stay informed about innovations.",
+    "ctaButton": "Learn More"
+  },
+  "NewsLetter": {
+    "startToday": "Start Today",
+    "freeTrial": "Try for Free Now!",
+    "description": "Gather the multi-channel chat experience on one screen with AI support.",
+    "phoneNumber": "Your Phone Number",
+    "callUs": "Let Us Call You",
+    "noCreditCard": "No Credit Card Required",
+    "immediateCall": "We Will Call You Immediately"
+  },
+  "Footer": {
+    "description": "Dialog Fusion consolidates all communication channels into a single panel, optimizing your processes. Deliver an excellent customer experience and convert conversations into sales.",
+    "rights": "2024 Dialog Fusion. All Rights Reserved.",
+    "links": {
+      "explore": "Explore",
+      "about": "About Us",
+      "pricing": "Pricing",
+      "career": "Career",
+      "partnership": "Partnership",
+      "contact": "Contact",
+      "resources": "Resources",
+      "blog": "Blog",
+      "documents": "Documents",
+      "privacyPolicy": "Privacy Policy",
+      "termsConditions": "Terms & Conditions"
+    },
+    "contactUs": {
+      "title": "Get In Touch",
+      "support": "Need Support?"
+    }
+  }
+}

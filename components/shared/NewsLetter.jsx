@@ -1,4 +1,8 @@
+import { useTranslations } from 'next-intl'
+
 const NewsLetter = () => {
+  const t = useTranslations('NewsLetter')
+
   return (
     <section className="relative pb-25 max-md:overflow-hidden max-md:pb-25">
       <div className="container relative max-md:text-center">
@@ -10,22 +14,22 @@ const NewsLetter = () => {
         <div className="absolute -bottom-[350px] left-1/2 -z-10 h-full w-full -translate-x-1/2 bg-[url('/images/hero-gradient.png')]  bg-contain bg-center bg-no-repeat p-[350px] opacity-70 md:hidden"></div>
         <div>
           <div>
-            <p className="section-tagline">Bugün Başla</p>
+            <p className="section-tagline">{t('startToday')}</p>
           </div>
           <div className="grid-y-10 grid grid-cols-12 items-start">
             <div className="max-md:col-span-full md:col-span-6 lg:col-span-7">
-              <h2 className="mb-5 text-[48px] font-semibold max-lg:text-[32px]">Hemen ücretsiz Dene!</h2>
-              <p>Çok kanallı chat deneyimini yapay zeka desteği ile tek ekranda topla.</p>
+              <h2 className="mb-5 text-[48px] font-semibold max-lg:text-[32px]">{t('freeTrial')}</h2>
+              <p>{t('description')}</p>
             </div>
             <div className="max-md:col-span-full max-md:mt-5 md:col-span-6 lg:col-span-5 ">
               <form>
                 <div className="grid grid-cols-12 items-center max-lg:gap-y-5 lg:gap-x-6 ">
                   <input
                     type="text"
-                    placeholder="Telefon Numaranız"
+                    placeholder={t('phoneNumber')}
                     className="placeholder:text-light text-light h-full rounded-[60px] border border-borderColor  bg-transparent bg-white ps-5 leading-[1.75] text-[#A1A49D] outline-none transition-all duration-300 focus:border-primary focus:outline-none dark:border-[#31332F] dark:bg-dark-200 dark:placeholder:text-[#A1A49D] dark:focus:border-primary max-lg:col-span-full max-lg:py-3.5 lg:col-span-8"
                   />
-                  <button className="btn max-lg:col-span-full lg:col-span-4">Sizi arayalım</button>
+                  <button className="btn max-lg:col-span-full lg:col-span-4">{t('callUs')}</button>
                 </div>
               </form>
               <ul className=" mt-6 flex items-center max-lg:justify-between max-lg:gap-y-2.5 max-md:flex-col lg:gap-5 ">
@@ -46,7 +50,7 @@ const NewsLetter = () => {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <p>Kredi Kartı Gerektirmez</p>
+                  <p>{t('noCreditCard')}</p>
                 </li>
                 <li className="flex items-center">
                   <svg
@@ -65,7 +69,7 @@ const NewsLetter = () => {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <p>Hemen Sizi Arayalım</p>
+                  <p>{t('immediateCall')}</p>
                 </li>
               </ul>
             </div>

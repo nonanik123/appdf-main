@@ -8,11 +8,13 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import SearchOption from './SearchOption'
+import { useTranslations } from 'next-intl'
 
-const PrimaryNavbar = () => {
+const PrimaryNavbar = ({ locale }) => {
   const [showSearch, setShowSearch] = useState(false)
   const [showMobileMenu, setShowMobileMenu] = useState(false)
   const [sticky, setSticky] = useState(false)
+  const t = useTranslations('Menu')
 
   const handleStickyNavbar = () => {
     if (window.scrollY >= 20) {
@@ -56,11 +58,11 @@ const PrimaryNavbar = () => {
               <li className={`${menuItem.path ?? 'group relative'}`} key={menuItem.id}>
                 {menuItem.path ? (
                   <Link
-                    href={menuItem.path}
+                    href={`/${locale}${menuItem.path}`}
                     className={cn(
                       'flex items-center rounded-large border border-transparent px-5 py-[5px] font-Inter text-base font-medium capitalize leading-8 text-paragraph transition-colors duration-500 hover:border-borderColor hover:bg-white hover:duration-500 dark:text-white dark:hover:border-borderColor/10 dark:hover:bg-dark-200 lg:px-4 xl:px-5',
                     )}>
-                    {menuItem.title}
+                    {t(menuItem.title)}
                   </Link>
                 ) : (
                   <>
@@ -70,7 +72,7 @@ const PrimaryNavbar = () => {
                         'flex items-center rounded-large border border-transparent px-5 py-[5px] font-Inter text-base font-medium capitalize leading-8 text-paragraph transition-colors duration-500 hover:border-borderColor hover:bg-white hover:duration-500 dark:text-white dark:hover:border-borderColor/10 dark:hover:bg-dark-200 lg:px-4 xl:px-5',
                         menuItem.title === 'home' ? 'active' : '',
                       )}>
-                      {menuItem.title}
+                      {t(menuItem.title)}
                       <FontAwesomeIcon
                         icon={faAngleDown}
                         className="ml-1 mt-1 text-paragraph duration-500 group-hover:rotate-180 dark:text-white"
@@ -81,8 +83,8 @@ const PrimaryNavbar = () => {
                         <li
                           className="relative overflow-hidden pb-2.5 text-base capitalize text-paragraph duration-500 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right before:scale-x-0  before:bg-paragraph before:transition-transform before:duration-500 before:content-[''] before:hover:origin-left before:hover:scale-x-100 dark:before:bg-white"
                           key={submenuItem.id}>
-                          <Link href={submenuItem.path} className="flex">
-                            {submenuItem.title}
+                          <Link href={`/${locale}${submenuItem.path}`} className="flex">
+                            {t(submenuItem.title)}
                           </Link>
                         </li>
                       ))}
@@ -94,10 +96,9 @@ const PrimaryNavbar = () => {
           </ul>
 
           <ul className="ml-auto flex items-center [&>*:not(:last-child)]:me-2.5">
-
             <li className="max-lg:hidden">
               <Link href="/request-demo" className="btn btn-navbar btn-sm">
-                Request Demo
+                {t('requestDemo')}
               </Link>
             </li>
             <li className="max-lg:inline-block lg:hidden">
@@ -142,19 +143,19 @@ const PrimaryNavbar = () => {
                 <li className={cn(menuItem.path ? '' : 'group relative')} key={menuItem.id}>
                   {menuItem.path ? (
                     <Link
-                      href={menuItem.path}
+                      href={`/${locale}${menuItem.path}`}
                       className={cn(
                         'flex items-center rounded-large border border-transparent px-5 py-[5px] font-Inter text-base font-medium leading-8 text-paragraph transition-colors duration-500 hover:border-borderColor hover:bg-white hover:duration-500 dark:text-white dark:hover:border-borderColor/10 dark:hover:bg-dark-200 lg:px-4 xl:px-5',
                       )}
                       onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                      {menuItem.title}
+                      {t(menuItem.title)}
                     </Link>
                   ) : (
                     <>
                       <Link
                         href="#"
                         className="flex items-center rounded-large border border-transparent px-5 py-[5px] font-Inter text-base font-medium leading-8 text-paragraph transition-colors duration-500 hover:border-borderColor hover:bg-white hover:duration-500 dark:text-white dark:hover:border-borderColor/10 dark:hover:bg-dark-200 lg:px-4 xl:px-5">
-                        {menuItem.title}
+                        {t(menuItem.title)}
                         <FontAwesomeIcon
                           icon={faAngleDown}
                           className="ml-auto mt-1 text-paragraph duration-500 group-hover:rotate-180 dark:text-white"
@@ -166,10 +167,10 @@ const PrimaryNavbar = () => {
                             className="relative overflow-hidden pb-2.5 text-base capitalize text-paragraph duration-500 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right before:scale-x-0 before:bg-paragraph  before:transition-transform before:duration-500 before:content-[''] before:hover:origin-left before:hover:scale-x-100 dark:before:bg-white"
                             key={submenuItem.id}>
                             <Link
-                              href={submenuItem.path}
+                              href={`/${locale}${submenuItem.path}`}
                               className="flex"
                               onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                              {submenuItem.title}
+                              {t(submenuItem.title)}
                             </Link>
                           </li>
                         ))}
@@ -181,7 +182,7 @@ const PrimaryNavbar = () => {
 
               <li>
                 <Link href="/request-demo" className="btn btn-navbar btn-sm">
-                  Request Demo
+                  {t('requestDemo')}
                 </Link>
               </li>
             </ul>
