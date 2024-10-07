@@ -7,29 +7,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { useRouter } from 'next/navigation'
 import SearchOption from './SearchOption'
 
 const PrimaryNavbar = () => {
-  const router = useRouter()
-
-  const handleTurkishFlagClick = () => {
-    const currentPath = window.location.pathname
-
-    if (!currentPath.startsWith('/tr')) {
-      const newPath = `/tr${currentPath}`
-      router.push(newPath)
-    }
-  }
-  const handleEnglishFlagClick = () => {
-    const currentPath = window.location.pathname
-
-    if (currentPath.startsWith('/tr')) {
-      const newPath = currentPath.replace('/tr', '')
-      router.push(newPath)
-    }
-  }
-
   const [showSearch, setShowSearch] = useState(false)
   const [showMobileMenu, setShowMobileMenu] = useState(false)
   const [sticky, setSticky] = useState(false)
@@ -96,10 +76,10 @@ const PrimaryNavbar = () => {
                         className="ml-1 mt-1 text-paragraph duration-500 group-hover:rotate-180 dark:text-white"
                       />
                     </Link>
-                    <ul className="absolute left-0 top-12 z-10 min-w-[250px] origin-top scale-y-0 rounded-md bg-white p-5 opacity-0 duration-500 group-hover:scale-y-100 group-hover:opacity-100 dark:bg-dark-200 [&>*:not(:first-child)]:mt-2.5 [&>*:not(:last-child)]:border-b [&>*:not(:last-child)]:border-dashed [&>*:not(:last-child)]:border-borderColor dark:[&>*:not(:last-child)]:border-borderColor-dark">
+                    <ul className="absolute left-0 top-12 z-10 min-w-[250px] origin-top scale-y-0 rounded-md bg-white p-5 opacity-0 duration-500  group-hover:scale-y-100 group-hover:opacity-100 dark:bg-dark-200 [&>*:not(:first-child)]:mt-2.5 [&>*:not(:last-child)]:border-b [&>*:not(:last-child)]:border-dashed [&>*:not(:last-child)]:border-borderColor dark:[&>*:not(:last-child)]:border-borderColor-dark">
                       {menuItem.submenu.map((submenuItem) => (
                         <li
-                          className="relative overflow-hidden pb-2.5 text-base capitalize text-paragraph duration-500 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right before:scale-x-0 before:bg-paragraph before:transition-transform before:duration-500 before:content-[''] before:hover:origin-left before:hover:scale-x-100 dark:before:bg-white"
+                          className="relative overflow-hidden pb-2.5 text-base capitalize text-paragraph duration-500 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right before:scale-x-0  before:bg-paragraph before:transition-transform before:duration-500 before:content-[''] before:hover:origin-left before:hover:scale-x-100 dark:before:bg-white"
                           key={submenuItem.id}>
                           <Link href={submenuItem.path} className="flex">
                             {submenuItem.title}
@@ -111,20 +91,10 @@ const PrimaryNavbar = () => {
                 )}
               </li>
             ))}
-
-            <li>
-              <button onClick={handleTurkishFlagClick} className="ml-5 mr-3 w-9">
-                <img src="/images/turkey-flag.png" alt="Turkish Flag" />
-              </button>
-            </li>
-            <li>
-              <button onClick={handleEnglishFlagClick} className="mr-5 w-9">
-                <img src="/images/united-kingdom-flag.png" alt="English Flag" />
-              </button>{' '}
-            </li>
           </ul>
 
           <ul className="ml-auto flex items-center [&>*:not(:last-child)]:me-2.5">
+
             <li className="max-lg:hidden">
               <Link href="/request-demo" className="btn btn-navbar btn-sm">
                 Request Demo

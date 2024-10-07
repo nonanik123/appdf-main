@@ -20,18 +20,20 @@ const HomePage3 = () => {
     <>
       <PrimaryNavbar />
       <main>
-        <PageHero />
+        <PageHero/>
         <DataIntegration />
-
+       
         <Clients sectionTitle={false} className={'pb-0 pt-0'} />
         <Rating />
         <PaymentFeatures
           features={PaymentFeaturesData}
+         
           sectionTitle="Neden Dialog Fusion"
           className="relative bg-white pb-150 pt-150 dark:bg-dark-300 max-md:overflow-hidden max-md:py-25"
         />
         <Pricing />
         <Blog />
+
 
         <NewsLetter />
       </main>

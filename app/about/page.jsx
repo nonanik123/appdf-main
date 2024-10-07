@@ -1,3 +1,4 @@
+
 import Footer from '@/components/footer/Footer'
 import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
 import CallToAction from '@/components/shared/CallToAction'
@@ -18,8 +19,11 @@ const About = () => {
           title="Geleceğin teknolojilerini bugünden kullanın"
           paragraph="Tüm satış ve destek kanallarınızı eğitilebilir yapay zeka desteği ile tek ekrandan yönetme ve entegrasyonlar sayesinde süreçlerinizi hızlandırma ayrıcalığına erişin."
         />
+        
+      
         <Clients sectionTitle={false} className={'pb-0 pt-0'} />
         <Rating />
+        
         <CallToAction title="Hadi Şimdi Başlayalım!" />
       </main>
       <Footer />
