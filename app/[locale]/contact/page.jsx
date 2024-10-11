@@ -1,7 +1,6 @@
 import ContactInfo from '@/components/contact/ContactInfo'
 import Footer from '@/components/footer/Footer'
 import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
-import ContactForm from '@/components/shared/ContactForm'
 import NewsLetter from '@/components/shared/NewsLetter'
 import PageHero from '@/components/shared/PageHero'
 
