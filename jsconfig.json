@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "jsx": "react-jsx", // JSX desteğini etkinleştirir
     "paths": {
       "@/*": ["./*"]
     }

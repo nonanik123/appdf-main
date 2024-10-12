@@ -3,16 +3,14 @@ import path from "path"
 import Image from "next/image"
 import { z } from "zod"
 
-import { columns } from "../../../components/table/columns"
-import { DataTable } from "../../../components/table/data-table"
-import { UserNav } from "../../../components/table/user-nav"
+import { columns } from "../../../components/tables/columns"
+import { DataTable } from "../../../components/tables/data-table"
+import { UserNav } from "../../../components/tables/user-nav"
 import { taskSchema } from "../../../data/table/schema"
 
-
-// Simulate a database read for tasks.
 async function getTasks() {
   const data = await fs.readFile(
-    path.join(process.cwd(), "app/(app)/examples/tasks/data/tasks.json")
+    path.join(process.cwd(), "/data/table/tasks.json")
   )
 
   const tasks = JSON.parse(data.toString())
