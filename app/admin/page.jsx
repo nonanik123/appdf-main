@@ -1,8 +1,9 @@
+
 export const metadata = {
   title: 'Admin',
 }
 
-const Login = () => {
+const Admin = () => {
   return (
     <>
       <main>
@@ -10,7 +11,7 @@ const Login = () => {
           <div className="absolute left-1/2 top-25 -z-10 h-[550px] w-full -translate-x-1/2  bg-[url('/images/hero-gradient.png')] bg-cover bg-center bg-no-repeat opacity-70 md:hidden"></div>
             <div className="mx-auto mb-12 max-w-[475px] text-center">
               <p className="section-tagline">Admin</p>
-              <h2>Giriş</h2>
+              <h2>Dashboard</h2>
             </div>
             <div className="relative z-10 mx-auto max-w-[510px]">
               <div className="rounded-medium bg-white p-2.5 shadow-nav dark:bg-dark-200">
@@ -19,21 +20,21 @@ const Login = () => {
                     <div className="grid grid-cols-12 gap-y-6 ">
                       <div className="col-span-12">
                         <label
-                          htmlFor="email"
+                          htmlFor="username"
                           className="mb-2 block font-jakarta_sans text-sm font-medium text-paragraph dark:text-white">
-                          Email
+                          Username
                         </label>
                         <input
-                          type="email"
-                          name="email"
-                          id="email"
-                          placeholder="Email address"
+                          type="text"
+                          name="username"
+                          id="username"
+                          placeholder="Username"
                           className="block w-full rounded-[48px] border border-borderColor bg-white px-5 py-3.5 text-sm text-paragraph-light outline-none transition-all duration-300 placeholder:text-paragraph-light focus:border-primary dark:border-borderColor-dark dark:bg-dark-200 dark:placeholder:text-paragraph-light dark:focus:border-primary"
                         />
                       </div>
                       <div className="col-span-full">
                         <label
-                          htmlFor="email"
+                          htmlFor="password"
                           className="mb-2 block font-jakarta_sans text-sm font-medium text-paragraph dark:text-white">
                           Password
                         </label>
@@ -41,7 +42,7 @@ const Login = () => {
                           type="password"
                           name="password"
                           id="password"
-                          placeholder="At least 8 character"
+                          placeholder="At least 8 characters"
                           className="block w-full rounded-[48px] border border-borderColor bg-white px-5 py-3.5 text-sm text-paragraph-light   outline-none transition-all duration-300 placeholder:text-paragraph-light focus:border-primary dark:border-borderColor-dark dark:bg-dark-200 dark:focus:border-primary"
                         />
                       </div>
@@ -59,4 +60,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Admin
