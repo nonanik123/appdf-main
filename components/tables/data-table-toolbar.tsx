@@ -78,7 +78,7 @@ export function DataTableToolbar<TData>({
       </div>
       <Dialog.Root>
         <Dialog.Trigger asChild>
-          <Button variant="outline" className="h-8">
+          <Button variant="default" className="h-8">
             Blog Oluştur
           </Button>
         </Dialog.Trigger>
