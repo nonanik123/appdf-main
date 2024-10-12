@@ -12,7 +12,7 @@ import { PaymentFeaturesData } from '@/data/data'
 import DataIntegration from '@/components/home-4/DataIntegration'
 import Blog from '@/components/home-2/Blog'
 export const metadata = {
-  title: 'Banking',
+  title: 'Dialog Fusion',
 }
 import { useTranslations } from 'next-intl'
 
