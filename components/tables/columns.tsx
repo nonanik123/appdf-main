@@ -1,10 +1,8 @@
 'use client'
 
 import { ColumnDef } from '@tanstack/react-table'
-
 import { Badge } from '@/registry/new-york/ui/badge'
 import { Checkbox } from '@/registry/new-york/ui/checkbox'
-
 import { Blog } from '../../data/table/schema'
 import { DataTableColumnHeader } from './data-table-column-header'
 import { DataTableRowActions } from './data-table-row-actions'
@@ -14,7 +12,11 @@ export const columns: ColumnDef<Blog>[] = [
     id: 'select',
     header: ({ table }) => (
       <Checkbox
-        checked={table.getIsAllPageRowsSelected() || table.getIsSomePageRowsSelected() ? 'indeterminate' : false}
+        checked={
+          table.getIsAllPageRowsSelected() || table.getIsSomePageRowsSelected()
+            ? 'indeterminate'
+            : false
+        }
         onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
         aria-label="Select all"
         className="translate-y-[2px]"
@@ -41,7 +43,7 @@ export const columns: ColumnDef<Blog>[] = [
     header: ({ column }) => <DataTableColumnHeader column={column} title="Description" />,
     cell: ({ row }) => <div className="w-[300px] truncate">{row.getValue('description')}</div>,
   },
-    {
+  {
     accessorKey: 'tags',
     header: ({ column }) => <DataTableColumnHeader column={column} title="Tags" />,
     cell: ({ row }) => {
@@ -55,7 +57,7 @@ export const columns: ColumnDef<Blog>[] = [
       );
     },
   },
-    {
+  {
     accessorKey: 'categories',
     header: ({ column }) => <DataTableColumnHeader column={column} title="Categories" />,
     cell: ({ row }) => {
@@ -76,5 +78,6 @@ export const columns: ColumnDef<Blog>[] = [
   },
   {
     id: 'actions',
-    cell: () => <DataTableRowActions />,  },
+    cell: ({ row }) => <DataTableRowActions id={row.original.id} />,
+  },
 ]

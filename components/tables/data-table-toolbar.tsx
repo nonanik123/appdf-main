@@ -85,7 +85,7 @@ export function DataTableToolbar<TData>({
 
     setOpen(false);
     setToastOpen(true);
-    await fetchBlogs(); // Blogları yeniden fetch et
+    await fetchBlogs(); 
   };
 
   const modules = {
