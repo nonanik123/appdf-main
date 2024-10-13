@@ -2,13 +2,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
 import { Pagination } from 'swiper/modules'
-
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 const FeatureBlog = ({ featureBlog }) => {
-  const featuredBlogFiltered = featureBlog.filter((blog) => blog.data.featured === true)
-
   return (
     <div className="relative">
       <div className="absolute -top-150 left-1/2 -z-10 h-[550px] w-full -translate-x-1/2  bg-[url('/images/hero-gradient.png')] bg-cover bg-center bg-no-repeat opacity-70 md:hidden"></div>
@@ -26,14 +25,14 @@ const FeatureBlog = ({ featureBlog }) => {
             slidesPerView={1}
             pagination={{ clickable: true }}
             className="swiper !pb-20 md:!px-6">
-            {featuredBlogFiltered.map((blogItem) => (
-              <SwiperSlide key={blogItem.slug}>
+            {featureBlog.map((blogItem) => (
+              <SwiperSlide key={blogItem._id}>
                 <article className="swiper-slide rounded-medium bg-white p-2.5 shadow-nav dark:bg-dark-200">
                   <div className="rounded border border-dashed border-gray-100 p-6 dark:border-borderColor-dark max-md:p-4">
                     <div className="grid grid-cols-2 items-center gap-12 max-md:grid-cols-1 max-md:gap-y-5">
                       <div className="relative h-full w-full xl:min-h-[330px]">
                         <Image
-                          src={blogItem.data.thumbnail}
+                          src={blogItem.featureImage || '/images/default-image.png'}
                           alt="blog image"
                           className="w-full rounded-lg max-md:h-[350px] max-md:object-cover max-md:object-center"
                           fill={true}
@@ -41,23 +40,29 @@ const FeatureBlog = ({ featureBlog }) => {
                       </div>
 
                       <div className="">
-                        <Link href={`/tags/${blogItem.data.tags}`} className="badge">
-                          {blogItem.data.tags}
+                        <Link href={`/tags/${(blogItem.tags || []).join(', ')}`} className="badge">
+                          {(blogItem.tags || []).join(', ')}
                         </Link>
 
-                        <Link href={`/blog/${blogItem.slug}`} className="block">
-                          <h3 className="mb-3 font-semibold leading-[1.33]">{blogItem.data.title}</h3>
+                        <Link href={`/blog/${blogItem._id}`} className="block">
+                          <h3 className="mb-3 font-semibold leading-[1.33]">{blogItem.title}</h3>
                         </Link>
                         <div className="mb-4 flex items-center gap-x-2 ">
-                          <p>{blogItem.data.author}</p>
+                          <p>{blogItem.author}</p>
                           <span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="5" height="6" viewBox="0 0 5 6" fill="none">
                               <circle cx="2.5" cy="3" r="2.5" fill="" className="fill-[#D8DBD0] dark:fill-[#3B3C39]" />
                             </svg>
                           </span>
-                          <p>{blogItem.data.date}</p>
+                          <p>{new Date(blogItem.date).toLocaleDateString()}</p>
                         </div>
-                        <ReactMarkdown className="mb-6">{blogItem.content.slice(0, 150)}</ReactMarkdown>
+                        <ReactMarkdown
+                          className="mb-6"
+                          remarkPlugins={[remarkGfm]}
+                          rehypePlugins={[rehypeRaw]}
+                        >
+                          {blogItem.description.slice(0, 150)}
+                        </ReactMarkdown>
                       </div>
                     </div>
                   </div>

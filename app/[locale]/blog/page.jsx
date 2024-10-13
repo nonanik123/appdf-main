@@ -1,17 +1,25 @@
-import FeatureBlog from '@/components/blogs/FeatureBlog';
-import RecentNews from '@/components/blogs/RecentNews';
-import Footer from '@/components/footer/Footer';
-import SecondaryNavbar from '@/components/navbar/SecondaryNavbar';
-import NewsLetter from '@/components/shared/NewsLetter';
-import PageHero from '@/components/shared/PageHero';
-import getMarkDownData from '@/utils/getMarkDownData';
+'use client'
+import { useEffect, useState } from 'react'
+import FeatureBlog from '@/components/blogs/FeatureBlog'
+import RecentNews from '@/components/blogs/RecentNews'
+import Footer from '@/components/footer/Footer'
+import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
+import NewsLetter from '@/components/shared/NewsLetter'
+import PageHero from '@/components/shared/PageHero'
 
-export const metadata = {
-  title: 'Blog',
-};
+const Blog = () => {
+  const [blogs, setBlogs] = useState([])
 
-const Blog = async () => {
-  const blogs = await  getMarkDownData('data/blogs');
+  const fetchBlogs = async () => {
+    const res = await fetch("http://localhost:3000/api/blogs")
+    const data = await res.json()
+    setBlogs(data)
+  }
+
+  useEffect(() => {
+    fetchBlogs()
+  }, [])
+
   return (
     <>
       <SecondaryNavbar />
@@ -23,7 +31,7 @@ const Blog = async () => {
       </main>
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default Blog;
+export default Blog

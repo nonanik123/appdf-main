@@ -43,7 +43,13 @@ const RecentNews = ({ blogItemData }) => {
           </div>
           <div className="grid grid-cols-3 gap-8 max-lg:grid-cols-2 max-md:grid-cols-1">
             {currentPageData.map((blog) => (
-              <BlogItems key={blog.slug} slug={blog.slug} content={blog.content} blogData={blog.data} column={false} />
+              <BlogItems
+                key={blog._id}
+                slug={blog._id}
+                content={blog.description}
+                blogData={blog}
+                column={false}
+              />
             ))}
           </div>
         </div>
