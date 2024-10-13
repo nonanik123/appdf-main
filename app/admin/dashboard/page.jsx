@@ -1,10 +1,18 @@
+"use client"
+import { useEffect, useState } from 'react'
 import { columns } from "../../../components/tables/columns"
 import { DataTable } from "../../../components/tables/data-table"
 import { blogSchema } from "../../../data/table/schema"
 
-async function getBlogs() {
+async function fetchBlogs() {
   const res = await fetch("http://localhost:3000/api/blogs")
   const blogs = await res.json()
+
+  // blogs değişkeninin bir dizi olup olmadığını kontrol et
+  if (!Array.isArray(blogs)) {
+    console.error("Fetched data is not an array:", blogs)
+    return []
+  }
 
   // Verileri kontrol et ve eksik alanları doldur
   const validatedBlogs = blogs.map((blog) => {
@@ -25,8 +33,17 @@ async function getBlogs() {
   return validatedBlogs
 }
 
-export default async function BlogPage() {
-  const blogs = await getBlogs()
+export default function BlogPage() {
+  const [blogs, setBlogs] = useState([])
+
+  const getBlogs = async () => {
+    const fetchedBlogs = await fetchBlogs()
+    setBlogs(fetchedBlogs)
+  }
+
+  useEffect(() => {
+    getBlogs()
+  }, [])
 
   return (
     <>
@@ -39,7 +56,7 @@ export default async function BlogPage() {
             </p>
           </div>
         </div>
-        <DataTable data={blogs} columns={columns} />
+        <DataTable data={blogs} columns={columns} fetchBlogs={getBlogs} />
       </div>
     </>
   )

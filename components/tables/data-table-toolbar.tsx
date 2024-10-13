@@ -33,10 +33,12 @@ const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 interface DataTableToolbarProps<TData> {
   table: Table<TData>;
+  fetchBlogs: () => Promise<void>; // Yeni fetchBlogs fonksiyonu
 }
 
 export function DataTableToolbar<TData>({
   table,
+  fetchBlogs,
 }: DataTableToolbarProps<TData>) {
   const [title, setTitle] = useState("");
   const [categories, setCategories] = useState("");
@@ -83,6 +85,7 @@ export function DataTableToolbar<TData>({
 
     setOpen(false);
     setToastOpen(true);
+    await fetchBlogs(); // Blogları yeniden fetch et
   };
 
   const modules = {

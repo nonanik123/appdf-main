@@ -31,11 +31,13 @@ import { DataTableToolbar } from "./data-table-toolbar"
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
   data: TData[]
+  fetchBlogs: () => Promise<void>;
 }
 
 export function DataTable<TData, TValue>({
   columns,
   data,
+  fetchBlogs, // fetchBlogs prop olarak alınıyor
 }: DataTableProps<TData, TValue>) {
   const [rowSelection, setRowSelection] = React.useState({})
   const [columnVisibility, setColumnVisibility] =
@@ -69,7 +71,7 @@ export function DataTable<TData, TValue>({
 
   return (
     <div className="space-y-4">
-      <DataTableToolbar table={table} />
+      <DataTableToolbar table={table} fetchBlogs={fetchBlogs} /> {/* fetchBlogs prop olarak geçiliyor */}
       <div className="rounded-md border">
         <Table>
           <TableHeader>
@@ -113,7 +115,7 @@ export function DataTable<TData, TValue>({
                   colSpan={columns.length}
                   className="h-24 text-center"
                 >
-                  No results.
+                  Yükleniyor...
                 </TableCell>
               </TableRow>
             )}
