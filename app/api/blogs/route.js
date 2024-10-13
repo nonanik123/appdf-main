@@ -103,7 +103,8 @@ export async function PUT(req) {
     const database = client.db("aplio");
     const blogs = database.collection("blogs");
 
-    const { id } = req.params;
+    const url = new URL(req.url);
+    const id = url.searchParams.get("id");
     const blogData = await req.json();
     const result = await blogs.updateOne(
       { _id: new ObjectId(id) },
