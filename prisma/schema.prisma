@@ -1,0 +1,20 @@
+datasource db {
+  provider = "mongodb"
+  url      = "mongodb+srv://dialogfusion:denemepass1.@cluster0.r0bba.mongodb.net/aplio"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Blog {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String
+  tags        String[]
+  categories  String[]
+  author      String
+  language    String
+  date        DateTime @default(now())
+  featureImage String
+}
