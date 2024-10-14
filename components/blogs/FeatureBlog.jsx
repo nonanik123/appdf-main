@@ -40,11 +40,11 @@ const FeatureBlog = ({ featureBlog }) => {
                       </div>
 
                       <div className="">
-                        <Link href={`/tags/${(blogItem.tags || []).join(', ')}`} className="badge">
+                        <Link href={`tags/${(blogItem.tags || []).join(', ')}`} className="badge">
                           {(blogItem.tags || []).join(', ')}
                         </Link>
 
-                        <Link href={`/blog/${blogItem._id}`} className="block">
+                        <Link href={`blog/${blogItem._id}`} className="block">
                           <h3 className="mb-3 font-semibold leading-[1.33]">{blogItem.title}</h3>
                         </Link>
                         <div className="mb-4 flex items-center gap-x-2 ">
