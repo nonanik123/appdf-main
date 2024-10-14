@@ -20,6 +20,8 @@ const Blog = () => {
     fetchBlogs()
   }, [])
 
+  console.log("123",blogs)
+
   return (
     <>
       <SecondaryNavbar />

@@ -36,24 +36,39 @@ export async function POST(req) {
   }
 }
 
-export async function GET() {
+export async function GET(req) {
   try {
+    const { searchParams } = new URL(req.url);
+    const id = searchParams.get('id');
+
     await client.connect();
     const database = client.db("aplio");
     const blogs = database.collection("blogs");
 
-    const blogList = await blogs.find({}).toArray();
+    if (id) {
+      const blog = await blogs.findOne({ _id: new ObjectId(id) });
 
-    return new Response(JSON.stringify(blogList), {
-      status: 200,
-      headers: { "Content-Type": "application/json" },
-    });
+      if (!blog) {
+        return new Response(JSON.stringify({ message: "Blog bulunamadı" }), {
+          status: 404,
+          headers: { "Content-Type": "application/json" },
+        });
+      }
+
+      return new Response(JSON.stringify(blog), {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      });
+    } else {
+      const allBlogs = await blogs.find({}).toArray();
+      return new Response(JSON.stringify(allBlogs), {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
   } catch (error) {
     return new Response(
-      JSON.stringify({
-        message: "Bloglar getirilirken bir hata oluştu",
-        error,
-      }),
+      JSON.stringify({ message: "Blog getirilirken bir hata oluştu", error }),
       {
         status: 500,
         headers: { "Content-Type": "application/json" },
@@ -70,7 +85,16 @@ export async function GET_BY_ID(req) {
     const database = client.db("aplio");
     const blogs = database.collection("blogs");
 
-    const { id } = req.params;
+    const url = new URL(req.url);
+    const id = url.pathname.split("/").pop(); // URL'den ID'yi alın
+
+    if (!ObjectId.isValid(id)) {
+      return new Response(JSON.stringify({ message: "Geçersiz blog ID'si" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
     const blog = await blogs.findOne({ _id: new ObjectId(id) });
 
     if (!blog) {
@@ -96,6 +120,7 @@ export async function GET_BY_ID(req) {
     await client.close();
   }
 }
+
 
 export async function PUT(req) {
   try {

@@ -8,7 +8,6 @@ async function fetchBlogs() {
   const res = await fetch("http://localhost:3000/api/blogs")
   const blogs = await res.json()
 
-  // blogs değişkeninin bir dizi olup olmadığını kontrol et
   if (!Array.isArray(blogs)) {
     console.error("Fetched data is not an array:", blogs)
     return []
