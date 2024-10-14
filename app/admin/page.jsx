@@ -1,12 +1,19 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 
 const Admin = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const router = useRouter()
+
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem('isLoggedIn')
+    if (isLoggedIn) {
+      router.push("/admin/dashboard")
+    }
+  }, [router])
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -17,6 +24,7 @@ const Admin = () => {
     }
 
     if (email === user.email && password === user.password) {
+      localStorage.setItem('isLoggedIn', 'true')
       router.push("/admin/dashboard")
     } else {
       alert("Invalid credentials")

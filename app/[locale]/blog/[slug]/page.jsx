@@ -1,6 +1,5 @@
 "use client"
 import { useEffect, useState } from 'react'
-import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
 import PageHero from '@/components/shared/PageHero'
 import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
@@ -8,12 +7,12 @@ import NewsLetter from '@/components/shared/NewsLetter'
 import Footer from '@/components/footer/Footer'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
+import PrimaryNavbar from '@/components/navbar/PrimaryNavbar'
 
-const BlogDetails = (props) => {
+const BlogDetails = ({ params: { locale, slug } }) => {
   const [blog, setBlog] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-  const slug = props.params.slug
 
   useEffect(() => {
     const fetchBlogData = async () => {
@@ -23,7 +22,7 @@ const BlogDetails = (props) => {
           throw new Error('Blog bulunamadı')
         }
         const data = await response.json()
-        console.log(data) // Blog verisini konsola yazdır
+        console.log(data) 
         setBlog(data)
       } catch (error) {
         setError(error.message)
@@ -49,7 +48,7 @@ const BlogDetails = (props) => {
 
   return (
     <>
-      <SecondaryNavbar />
+      <PrimaryNavbar locale={locale} />
       <main>
         <PageHero subtitle="BLOG Details" title="Recent blogs created <br/> by aplio" />
         <article className="relative pb-150">

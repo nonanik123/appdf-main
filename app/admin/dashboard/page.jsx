@@ -1,5 +1,7 @@
 "use client"
+
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { columns } from "../../../components/tables/columns"
 import { DataTable } from "../../../components/tables/data-table"
 import { blogSchema } from "../../../data/table/schema"
@@ -34,15 +36,21 @@ async function fetchBlogs() {
 
 export default function BlogPage() {
   const [blogs, setBlogs] = useState([])
+  const router = useRouter()
+
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem('isLoggedIn')
+    if (!isLoggedIn) {
+      router.push("/admin")
+    } else {
+      getBlogs()
+    }
+  }, [router])
 
   const getBlogs = async () => {
     const fetchedBlogs = await fetchBlogs()
     setBlogs(fetchedBlogs)
   }
-
-  useEffect(() => {
-    getBlogs()
-  }, [])
 
   return (
     <>

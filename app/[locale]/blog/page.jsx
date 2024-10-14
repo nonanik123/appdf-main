@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react'
 import FeatureBlog from '@/components/blogs/FeatureBlog'
 import RecentNews from '@/components/blogs/RecentNews'
 import Footer from '@/components/footer/Footer'
-import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
 import NewsLetter from '@/components/shared/NewsLetter'
 import PageHero from '@/components/shared/PageHero'
+import PrimaryNavbar from '@/components/navbar/PrimaryNavbar'
 
-const Blog = () => {
+const Blog = ({ params: { locale } }) => {
   const [blogs, setBlogs] = useState([])
 
   const fetchBlogs = async () => {
@@ -24,7 +24,7 @@ const Blog = () => {
 
   return (
     <>
-      <SecondaryNavbar />
+      <PrimaryNavbar locale={locale} />
       <main>
         <PageHero subtitle="BLOG GRID" title="Recent blogs created <br/> by aplio" />
         <FeatureBlog featureBlog={blogs} />

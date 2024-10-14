@@ -1,6 +1,6 @@
 import BlogSearch from '@/components/blogs/BlogSearch'
 import Footer from '@/components/footer/Footer'
-import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
+import PrimaryNavbar from '@/components/navbar/PrimaryNavbar'
 import PageHero from '@/components/shared/PageHero'
 import getMarkDownData from '@/utils/getMarkDownData'
 
@@ -8,12 +8,12 @@ export const metadata = {
   title: 'Blog-list',
 }
 
-const BlogListPage = () => {
+const BlogListPage = ({ params: { locale } }) => {
   const blogs = getMarkDownData('data/blogs')
 
   return (
     <>
-      <SecondaryNavbar />
+      <PrimaryNavbar locale={locale} />
       <main>
         <PageHero subtitle="BLOG LIST" title="Recent blogs created <br/> by aplio" />
         <section className="relative mb-150">

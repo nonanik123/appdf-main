@@ -1,6 +1,6 @@
 import ContactInfo from '@/components/contact/ContactInfo'
 import Footer from '@/components/footer/Footer'
-import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
+import PrimaryNavbar from '@/components/navbar/PrimaryNavbar'
 import NewsLetter from '@/components/shared/NewsLetter'
 import PageHero from '@/components/shared/PageHero'
 
@@ -8,10 +8,10 @@ export const metadata = {
   title: 'Contact',
 }
 
-const page = () => {
+const page = ({ params: { locale } }) => {
   return (
     <>
-      <SecondaryNavbar />
+      <PrimaryNavbar locale={locale} />
       <main>
         <PageHero
        
