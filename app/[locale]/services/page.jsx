@@ -1,5 +1,5 @@
 import Footer from '@/components/footer/Footer'
-import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
+import PrimaryNavbar from '@/components/navbar/PrimaryNavbar'
 import MembersCounter from '@/components/shared/MembersCounter'
 import NewsLetter from '@/components/shared/NewsLetter'
 import PageHero from '@/components/shared/PageHero'
@@ -9,10 +9,10 @@ import Services from '@/components/shared/Services'
 export const metadata = {
   title: 'Services',
 }
-export default function ServicePage() {
+export default function ServicePage({ params: { locale } }) {
   return (
     <>
-      <SecondaryNavbar />
+      <PrimaryNavbar locale={locale} />
       <main>
         <PageHero
           subtitle="OUR SERVICES"

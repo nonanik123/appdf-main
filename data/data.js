@@ -49,7 +49,7 @@ export const menuData = {
     {
       id: 6,
       title: 'pricing',
-      path: '/#fiyatlandirma',
+      path: '/services',
       newTab: false,
     },
 
